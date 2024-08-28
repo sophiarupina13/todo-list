@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/todo.css" />
+    <link
+            rel="stylesheet"
+            href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <title>ToDo List</title>
+</head>
+<body>
+<header>
+    <input id="searchInput" class="search" type="text" placeholder="Поиск" />
+    <img class="account-icon" src="/assets/no-photo.png" />
+</header>
+<main class="container">
+    <div class="sidebar">
+        <button id="todayBtn" class="period-button">Сегодня</button>
+        <button id="weekBtn" class="period-button">На неделю</button>
+        <div class="calendar">
+            <p>Выберите дату:</p>
+            <input
+                    type="text"
+                    class="date"
+                    id="dateRangePicker"
+                    placeholder="dd/mm/yyyy-dd/mm/yyyy"
+            />
+            <div class="undone-tasks-checkbox">
+                <input type="checkbox" id="incompleteTasks" />
+                <p>Только невыполненные</p>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="task-header">
+            <h2>8 мая 2022</h2>
+            <button class="sort-button">
+                <img
+                        id="sortByDateBtn"
+                        class="sorting-icon"
+                        src="/assets/sorting.png"
+                />Сортировать по дате
+            </button>
+        </div>
+        <div class="tasks" id="tasksList">
+        </div>
+    </div>
+    <div id="taskModal" title="Task Details">
+        <div class="modal-content">
+            <h3 id="modalTaskTitle">Title</h3>
+            <p id="modalTaskDescription">Description</p>
+        </div>
+    </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="/todo.js"></script>
+</body>
+</html>
