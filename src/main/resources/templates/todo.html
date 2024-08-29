@@ -8,6 +8,8 @@
             rel="stylesheet"
             href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
     />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <title>ToDo List</title>
 </head>
 <body>
@@ -24,38 +26,51 @@
             <input
                     type="text"
                     class="date"
-                    id="dateRangePicker"
-                    placeholder="dd/mm/yyyy-dd/mm/yyyy"
+                    id="startDate"
+                    placeholder="Начальная дата"
             />
+            <input
+                    type="text"
+                    class="date"
+                    id="endDate"
+                    placeholder="Конечная дата"
+            />
+            <p>Дополнительно:</p>
+            <input type="number" class="options" id="limitInput" placeholder="Лимит" min="0" />
+            <input type="number" class="options" id="offsetInput" placeholder="Смещение" min="0" />
             <div class="undone-tasks-checkbox">
                 <input type="checkbox" id="incompleteTasks" />
                 <p>Только невыполненные</p>
             </div>
+            <button id="resetBtn">Сбросить настройки</button>
         </div>
     </div>
     <div class="content">
         <div class="task-header">
             <h2>8 мая 2022</h2>
-            <button class="sort-button">
-                <img
-                        id="sortByDateBtn"
-                        class="sorting-icon"
-                        src="/assets/sorting.png"
-                />Сортировать по дате
+            <button class="sort-button" id="sortByDateBtn">
+                <img class="sorting-icon" src="/assets/sorting.png" />Сортировать по
+                дате
             </button>
         </div>
-        <div class="tasks" id="tasksList">
-        </div>
+        <div class="tasks" id="tasksList"></div>
     </div>
-    <div id="taskModal" title="Task Details">
-        <div class="modal-content">
-            <h3 id="modalTaskTitle">Title</h3>
-            <p id="modalTaskDescription">Description</p>
+    <div class="bg-for-task-content" id="bgForTask">
+        <div class="task-content" id="taskDetails" style="display: none">
+            <div class="task-data">
+                <div>
+                    <div class="task-data-name-checkbox">
+                        <h3 id="taskTitle">Название</h3>
+                        <input type="checkbox" id="incompleteTask" />
+                    </div>
+                    <p id="taskDate">Дата</p>
+                </div>
+                <button id="taskDetailsCloseBtn">✖</button>
+            </div>
+            <p id="taskDescription">Описание...</p>
         </div>
     </div>
 </main>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script src="/todo.js"></script>
 </body>
 </html>
