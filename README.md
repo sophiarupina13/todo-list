@@ -40,5 +40,5 @@ Documentation to API: [https://todo.doczilla.pro/](https://todo.doczilla.pro/swa
 🚀 Getting Started
 1. Clone the repository: git clone https://github.com/sophiarupina13/todo-list.git
 2. Run the application: java -jar build/libs/studentsTest-0.0.1-SNAPSHOT.jar
-3. Open url: http://localhost:8080/students-db
+3. Open url: http://localhost:8080/todo-list
 4. Enjoy
