@@ -10,6 +10,15 @@ $(document).ready(function () {
     let dateMode = false;
     let searchMode = false;
 
+    const today = new Date();
+    const formattedDate = today.toLocaleDateString('ru-RU', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    });
+
+    $('#currentDate').text(formattedDate);
+
     $("#startDate, #endDate").datepicker({
         changeMonth: true,
         changeYear: true,
